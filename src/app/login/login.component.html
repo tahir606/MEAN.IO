@@ -1,3 +1,33 @@
 <h1 style="text-align:center">
   Angular Login Example
 </h1>
+<br>
+<div>
+  <div>
+    <p>Login</p>
+  </div>
+  <div>
+    <form class="example-form">
+      <table cellspacing="0">
+        <tr>
+          <td>
+            <div>
+              <input matInput placeholder="Email" [(ngModel)]="email" name="email" required>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>
+              <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <div>
+    <button mat-raised-button (click)="login()" color="primary">Login</button>
+    <!--<span>Don't have an account ? <a [routerLink]="['/auth/register']" >register</a> here</span>-->
+  </div>
+</div>
