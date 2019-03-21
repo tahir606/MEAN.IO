@@ -10,7 +10,7 @@ export class AuthService {
   }
 
   public login(userInfo: User) {
-    localStorage.setItem('ACCESS_TOKEN', 'access_token');
+    // localStorage.setItem('ACCESS_TOKEN', 'access_token');
   }
 
   public isLoggedIn() {

@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+
 import {AuthService} from '../../services/auth.service';
+import {User} from '../../model/user';
+import {FormControl} from '@angular/forms';
+
 
 @Component({
   selector: 'app-login',
@@ -9,19 +12,27 @@ import {AuthService} from '../../services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService) {
+  }
 
   email: string;
   password: string;
 
+  loginForm = new FormControl('');
+
   ngOnInit() {
   }
 
+  updateLoginForm() {
+    this.loginForm.setValue('t@g.com');
+  }
+
   login(): void {
-    // this.authService.login(this.email, this.password)
-    //   .subscribe(data => {
-    //     this.router.navigate(['']);
-    //   });
-    console.log('Logging in');
+    // const user: User = {
+    //   email: 'tahir60652@gmail.com',
+    //   password: 'queen123'
+    // };
+    console.log(this.email, this.password);
+    // this.authService.login(user);
   }
 }
