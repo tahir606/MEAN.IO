@@ -1,3 +1,8 @@
-.loginForm {
+.centerDiv {
+  width: 50%;
   margin: 0 auto;
+}
+
+.title {
+  font-weight: 400;
 }

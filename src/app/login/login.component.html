@@ -1,48 +1,30 @@
-<h1 style="text-align:center">
-  Angular Login Example
-</h1>
 <br>
-<div>
-  <div>
-    <p>Login</p>
-  </div>
-  <div>
-    <form class="loginForm">
-      <table cellspacing="0">
-        <tr>
-          <td>
-            <div>
-              <input matInput placeholder="Email" [(ngModel)]="email" name="email" required>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div>
-              <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
-            </div>
-          </td>
-        </tr>
-      </table>
+<div class="jumbotron">
+  <h4 class="title"> Login </h4>
+  <br>
+  <div class="container">
+    <form class="row" (submit)="updateLoginForm()">
+      <div class="centerDiv">
+        <div class="input-group">
+          <input placeholder="Username" id="username" [formControl]="userForm"
+                 class="form-control" [ngClass]="{'is-invalid': isUser}"/>
+          <div *ngIf="isUser" class="invalid-feedback">
+            Username cannot be empty
+          </div>
+        </div>
+        <br>
+        <div class="input-group">
+          <input type="password" placeholder="Password" [formControl]="passwordForm"
+                 class="form-control" [ngClass]="{'is-invalid': isPass}"/>
+          <div *ngIf="isPass" class="invalid-feedback">
+            Password cannot be empty
+          </div>
+        </div>
+        <br>
+        <div class="form-group">
+          <button class="btn btn-dark">Login</button>
+        </div>
+      </div>
     </form>
   </div>
-  <div>
-    <button mat-raised-button (click)="login()" color="primary">Login</button>
-    <!--<span>Don't have an account ? <a [routerLink]="['/auth/register']" >register</a> here</span>-->
-  </div>
-</div>
-<br><br>
-<div class="container">
-  <div class="form-group">
-    <label>
-      Email:
-    </label>
-    <input type="text" [formControl]="loginForm" />
-  </div>
-  <div class="form-group">
-    <button (click)="updateLoginForm()" class="btn btn-dark">Update Email</button>
-  </div>
-  <p>
-    Value: {{ loginForm.value }}
-  </p>
 </div>
